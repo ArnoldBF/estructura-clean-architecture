@@ -1,0 +1,36 @@
+{
+  "name": "app_temporal",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon",
+    "build": "rimraf ./dist && tsc",
+    "start": "npm run build && node dist/app.js",
+    "typeorm": "typeorm-ts-node-esm",
+    "migrations:generate": "node ./create-migrations.js",
+    "migrations:run": "typeorm migration:run",
+    "migrations:revert": "typeorm migration:revert",
+    "migrations:delete": "typeorm migration:revert && rm -rf ./src/db/migrations/*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.13.5",
+    "nodemon": "^3.1.9",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "app_temporal": "file:",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "mssql": "^10.0.4",
+    "typeorm": "^0.3.20"
+  }
+}
